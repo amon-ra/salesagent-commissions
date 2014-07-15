@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+
+        <!-- 					MENÙ	PROVVIGIONI 				-->
+        <menuitem id="base.menu_commissions" name="Commissions" groups="group_salesagent_user"/>
+        <menuitem parent="base.menu_commissions" id="menu_commissions_summary" name="Summary"/>
+        <menuitem parent="base.menu_commissions" id="menu_commissions_address_book" name="Address Book"/>
+        <menuitem parent="base.menu_commissions" id="menu_commissions_tools" name="Tools"/>
+
+        <!--            SALESAGENT          MENU                    -->
+        <menuitem action="action_partner_form_salesagent" id="menu_partner_salesagent" parent="menu_commissions_address_book" name="Salesagents" />
+
+        <!--                COMMISSION SUMMARY - MENU                   -->
+        <menuitem name="Commission for invoices" parent="menu_commissions_summary" id="menu_invoice_provvigioni" action="action_invoice_provvigioni"/>
+
+        <!--                COMMISSION SUMMARY - MENU                   -->
+        <menuitem name="Invoice for Salesagent" parent="menu_commissions_summary" id="menu_invoice_for_salesagent" action="action_invoice_salesagent_total"/>
+
+        <!-- WIZARD MENU -->
+        <menuitem parent="menu_commissions_tools" id="menu_wzd_percentage_calcolate" name="Calculate percentage on fix price" action="act_wzd_percentage_calcolate_product" sequence="1" />
+
+	</data>
+</openerp>

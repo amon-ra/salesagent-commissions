@@ -1,0 +1,175 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* salesagent_commissions_report_webkit
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 7.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-06-19 15:46+0000\n"
+"PO-Revision-Date: 2014-06-19 15:46+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: salesagent_commissions_report_webkit
+#: view:wizard.list.commission:0
+msgid "Stampa"
+msgstr "Stampa"
+
+#. module: salesagent_commissions_report_webkit
+#: selection:wizard.list.commission,payment:0
+msgid "Pagate e Non Pagate"
+msgstr "Pagate e Non Pagate"
+
+#. module: salesagent_commissions_report_webkit
+#: field:wizard.list.commission,payment:0
+msgid "Partite"
+msgstr "Partite"
+
+#. module: salesagent_commissions_report_webkit
+#: model:ir.model,name:salesagent_commissions_report_webkit.model_wizard_list_commission
+msgid "wizard.list.commission"
+msgstr "wizard.list.commission"
+
+#. module: salesagent_commissions_report_webkit
+#: field:wizard.list.commission,message:0
+msgid "Messaggio"
+msgstr "Messaggio"
+
+#. module: salesagent_commissions_report_webkit
+#: field:wizard.list.commission,company_id:0
+msgid "Company"
+msgstr "Azienda"
+
+#. module: salesagent_commissions_report_webkit
+#: selection:wizard.list.commission,filter:0
+msgid "Date"
+msgstr "Data"
+
+#. module: salesagent_commissions_report_webkit
+#: field:wizard.list.commission,chart_account_id:0
+msgid "Chart of Account"
+msgstr "Piano dei Conti"
+
+#. module: salesagent_commissions_report_webkit
+#: help:wizard.list.commission,chart_account_id:0
+msgid "Select Charts of Accounts"
+msgstr "Seleziona Piano dei Conti"
+
+#. module: salesagent_commissions_report_webkit
+#: field:wizard.list.commission,date_to:0
+msgid "End Date"
+msgstr "A Data"
+
+#. module: salesagent_commissions_report_webkit
+#: view:wizard.list.commission:0
+msgid "Dates"
+msgstr "Date"
+
+#. module: salesagent_commissions_report_webkit
+#: code:addons/salesagent_commissions_report_webkit/wizard/list_commission_wizard.py:183
+#, python-format
+msgid "No documents"
+msgstr "Nessun documento"
+
+#. module: salesagent_commissions_report_webkit
+#: model:ir.actions.report.xml,name:salesagent_commissions_report_webkit.list_commission_invoice_id
+msgid "Riepilogo"
+msgstr "Riepilogo"
+
+#. module: salesagent_commissions_report_webkit
+#: code:addons/salesagent_commissions_report_webkit/report/parser.py:62
+#, python-format
+msgid "di"
+msgstr "di"
+
+#. module: salesagent_commissions_report_webkit
+#: selection:wizard.list.commission,payment:0
+msgid "Pagate"
+msgstr "Pagate"
+
+#. module: salesagent_commissions_report_webkit
+#: model:ir.actions.act_window,name:salesagent_commissions_report_webkit.action_list_commission
+#: model:ir.ui.menu,name:salesagent_commissions_report_webkit.menu_list_commission
+#: view:wizard.list.commission:0
+msgid "Riepilogo Provvigioni"
+msgstr "Riepilogo Provvigioni"
+
+#. module: salesagent_commissions_report_webkit
+#: help:wizard.list.commission,fiscalyear_id:0
+msgid "Keep empty for all open fiscal year"
+msgstr "Lascia vuoto per tutti gli anni fiscali aperti"
+
+#. module: salesagent_commissions_report_webkit
+#: field:wizard.list.commission,fiscalyear_id:0
+msgid "Fiscal Year"
+msgstr "Anno Fiscale"
+
+#. module: salesagent_commissions_report_webkit
+#: code:addons/salesagent_commissions_report_webkit/report/parser.py:62
+#, python-format
+msgid "Pagina"
+msgstr "Pagina"
+
+#. module: salesagent_commissions_report_webkit
+#: code:addons/salesagent_commissions_report_webkit/wizard/list_commission_wizard.py:179
+#, python-format
+msgid "No documents found in the current selection"
+msgstr "Nessun documento trovato con la selezione corrente"
+
+#. module: salesagent_commissions_report_webkit
+#: view:wizard.list.commission:0
+msgid "Annulla"
+msgstr "Annulla"
+
+#. module: salesagent_commissions_report_webkit
+#: help:wizard.list.commission,period_ids:0
+msgid "Select periods you want retrieve documents from"
+msgstr "Seleziona periodi da cui recuperare documenti"
+
+#. module: salesagent_commissions_report_webkit
+#: field:wizard.list.commission,period_ids:0
+msgid "Periodi"
+msgstr "Periodi"
+
+#. module: salesagent_commissions_report_webkit
+#: selection:wizard.list.commission,payment:0
+msgid "Non Pagate"
+msgstr "Non Pagate"
+
+#. module: salesagent_commissions_report_webkit
+#: view:wizard.list.commission:0
+#: selection:wizard.list.commission,filter:0
+msgid "Periods"
+msgstr "Periodi"
+
+#. module: salesagent_commissions_report_webkit
+#: view:wizard.list.commission:0
+msgid "Filters"
+msgstr "Filtri"
+
+#. module: salesagent_commissions_report_webkit
+#: code:addons/salesagent_commissions_report_webkit/report/parser.py:48
+#, python-format
+msgid "RIEPILOGO PROVVIGIONI"
+msgstr "RIEPILOGO PROVVIGIONI"
+
+#. module: salesagent_commissions_report_webkit
+#: field:wizard.list.commission,date_from:0
+msgid "Start Date"
+msgstr "Da Data"
+
+#. module: salesagent_commissions_report_webkit
+#: field:wizard.list.commission,filter:0
+msgid "Filter by"
+msgstr "Filtra per"
+
+#. module: salesagent_commissions_report_webkit
+#: view:wizard.list.commission:0
+msgid "or"
+msgstr "o"
+

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="wizard_list_commission" model="ir.ui.view">
+            <field name="name">Riepilogo Provvigioni</field>
+            <field name="model">wizard.list.commission</field>
+            <field name="arch" type="xml">
+                <form string="Riepilogo Provvigioni" version="7.0">
+	                <group col="4">
+	                   <field name="chart_account_id" widget="selection" on_change="onchange_chart_id(chart_account_id, context)"/>
+	                   <field name="company_id" invisible="1"/>
+	                   <field name="fiscalyear_id" domain="[('company_id','=',company_id)]"/>
+	                   <newline/>
+	                   <field name="message" nolabel="1" colspan="4"/>
+	                </group>
+	                <notebook tabpos="up" colspan="4">
+	                    <page string="Filters" name="filters">
+	                        <group>
+	                            <field name="payment"/>
+	                            <field name="filter" on_change="onchange_filter(filter, fiscalyear_id)"/>
+	                        </group>
+	                        <group string="Dates" attrs="{'invisible':[('filter', '!=', 'filter_date')], 'required':[('filter', '=', 'filter_date')]}">
+	                            <field name="date_from"/>
+	                            <field name="date_to"/>
+	                        </group>
+	                        <group string="Periods" attrs="{'invisible':[('filter','!=','filter_period')], 'required':[('filter', '=', 'filter_period')]}">
+	                            <field name="period_ids" colspan="4" nolabel="1" height="250"/>
+	                        </group>
+	                    </page>
+	                </notebook>
+                    <footer>
+                        <button string="Stampa" name="print_registro" type="object" class="oe_highlight"/>
+                        or
+                        <button string="Annulla" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_list_commission" model="ir.actions.act_window">
+            <field name="name">Riepilogo Provvigioni</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">wizard.list.commission</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem
+            name="Riepilogo Provvigioni"
+            parent="account.menu_finance_reporting"
+            action="action_list_commission"
+            id="menu_list_commission"/>
+
+    </data>
+</openerp>

@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+
+		<!-- 					LIST COMMISSION DETAILS
+		<record id="list_commission_details_id" model="ir.actions.report.xml">
+			<field name="name">Riepilogo</field>
+			<field name="type">ir.actions.report.xml</field>
+			<field name="model">account.invoice.line</field>
+			<field name="report_name">list_commission_details</field>
+            <field eval="[(6,0,[])]" name="groups_id"/>
+            <field eval="0" name="multi"/>
+            <field eval="0" name="auto"/>
+            <field eval="1" name="header"/>
+			<field name="report_type">webkit</field>
+			<field name="report_rml">salesagent_commissions_report_webkit/report/list_commission_details.mako</field>
+			<field name="report_file">salesagent_commissions_report_webkit/report/list_commission_details.mako</field>
+		</record>
+        <record id="property_list_commission_details_id" model="ir.property">
+            <field name="name">property_list_commission_details_id</field>
+            <field name="fields_id" ref="report_webkit.field_ir_act_report_xml_webkit_header"/>
+            <field eval="'ir.header_webkit,'+str(ref('account_financial_report_webkit.financial_landscape_header'))" model="ir.header_webkit" name="value"/>
+            <field eval="'ir.actions.report.xml,'+str(ref('list_commission_details_id'))" model="ir.actions.report.xml" name="res_id"/>
+        </record>
+-->
+		<!-- 					LIST COMMISSION INVOICE				-->
+		<record id="list_commission_invoice_id" model="ir.actions.report.xml">
+			<field name="name">Riepilogo</field>
+			<field name="type">ir.actions.report.xml</field>
+			<field name="model">account.invoice</field>
+			<field name="report_name">list_commission_invoice</field>
+            <field eval="[(6,0,[])]" name="groups_id"/>
+            <field eval="0" name="multi"/>
+            <field eval="0" name="auto"/>
+            <field eval="1" name="header"/>
+			<field name="report_type">webkit</field>
+			<field name="report_rml">salesagent_commissions_report_webkit/report/list_commission_invoice.mako</field>
+			<field name="report_file">salesagent_commissions_report_webkit/report/list_commission_invoice.mako</field>
+		</record>
+        <record id="property_list_commission_invoice_id" model="ir.property">
+            <field name="name">property_list_commission_invoice_id</field>
+            <field name="fields_id" ref="report_webkit.field_ir_act_report_xml_webkit_header"/>
+            <field eval="'ir.header_webkit,'+str(ref('account_financial_report_webkit.financial_landscape_header'))" model="ir.header_webkit" name="value"/>
+            <field eval="'ir.actions.report.xml,'+str(ref('list_commission_invoice_id'))" model="ir.actions.report.xml" name="res_id"/>
+        </record>
+
+    </data>
+</openerp>

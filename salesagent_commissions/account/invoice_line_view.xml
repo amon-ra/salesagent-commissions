@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<openerp>
+    <data>
+
+        <!-- ======================================================	-->
+        <!--  				ACCOUNT.INVOICE.LINE TREE				-->
+        <!-- ======================================================	-->
+        <record id="view_invoice_line_tree_salesagent" model="ir.ui.view">
+            <field name="name">account.invoice.line.tree.salesagent</field>
+            <field name="model">account.invoice.line</field>
+            <field name="inherit_id" ref="account.view_invoice_line_tree"/>
+            <field name="arch" type="xml">
+                <field name='price_subtotal' position="after">
+                    <field name="commission"/>
+                </field>
+            </field>
+        </record>
+        
+        <!-- ======================================================	-->
+        <!--  				ACCOUNT.INVOICE.LINE FORM				-->
+        <!-- ======================================================	-->
+        <record id="view_invoice_line_form_salesagent" model="ir.ui.view">
+            <field name="name">account.invoice.line.form.salesagent</field>
+            <field name="model">account.invoice.line</field>
+            <field name="inherit_id" ref="account.view_invoice_line_form"/>
+            <field name="arch" type="xml">
+                <field name='discount' position="after">
+                    <field name="no_commission" colspan="2"/>
+                </field>
+                <field name='invoice_line_tax_id' position="attributes">
+                    <attribute name="context">{}</attribute>
+                </field>
+                <xpath expr="//form" position="attributes">
+                    <attribute name="create">false</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <!--========================================================-->
+        <!--				COMMISSION SUMMARY - TREE					-->
+        <!--========================================================-->
+        <record id="view_invoice_provvigioni_tree" model="ir.ui.view">
+            <field name="name">account.invoice.line.provvigioni.tree</field>
+            <field name="model">account.invoice.line</field>
+            <field name="priority" eval="30" />
+            <field name="arch" type="xml">
+                <tree string="Commissions" colors="darkorange:payment_commission_date != False" create="false" version="7.0">
+                    <field name="commission_presence" invisible="1"/>
+                    <field name="salesagent_id" />
+                    <field name="name" />
+                    <field name="price_subtotal" />
+                    <field name="commission_percentage"/>
+                    <field name="commission" sum="commissions"/>
+                    <field name="payment_commission_date"/>
+                    <field name="payment_commission_note"/>
+                    <field name="date_invoice" />
+                    <field name="partner_id" />
+                    <field name="invoice_id" />
+                    <field name="reconciled"/>
+                </tree>
+            </field>
+        </record>
+
+        <!--========================================================-->
+        <!--				COMMISSION SUMMARY - FILTER				-->
+        <!--========================================================-->
+        <record id="view_invoice_provvigioni_filter" model="ir.ui.view">
+            <field name="name">account.invoice.line.provvigioni.select</field>
+            <field name="model">account.invoice.line</field>
+            <field name="arch" type="xml">
+                <search string="Commissions">
+                    <filter string="Invoice Not paid" domain="[('reconciled', '=', False)]"/>
+                    <filter string="Invoice Paid" domain="['!', ('reconciled', '=', False)]"/>
+                    <filter string="Not paid" domain="[('paid_commission', '=', False)]"/>
+                    <filter string="Paid" domain="['!', ('paid_commission', '=', False)]"/>
+                    <filter string="Group by Invoice" context="{'group_by':'invoice_id'}"/>
+                    <field name="salesagent_id" />
+                    <field name="partner_id" />
+                    <field name="invoice_id" string="Invoice"/>
+                    <field name="date_invoice"/>
+                    <field name="payment_commission_date"/>
+                </search>
+            </field>
+        </record>
+
+        <!--========================================================-->
+        <!--				COMMISSION SUMMARY - ACTION				-->
+        <!--========================================================-->
+        <record model="ir.actions.act_window" id="action_invoice_provvigioni">
+                <field name="name">Commissions</field>
+                <field name="type">ir.actions.act_window</field>
+                <field name="res_model">account.invoice.line</field>
+                <field name="view_type">form</field>
+                <field name="view_mode">tree,form</field>
+                <field name="view_id" ref="view_invoice_provvigioni_tree"/>
+                <field name="search_view_id" ref="view_invoice_provvigioni_filter"/>
+                <field name="domain">[('salesagent_id', '!=', False), ('commission_presence', '!=', False)]</field>
+        </record>
+
+    </data>
+</openerp>
